@@ -96,6 +96,62 @@ internal class Ejemplos
     //Realizar una llamada a cada método definido en CasoLinq y mostar por consola según corresponda
     public static void EjemploLinq()
     {
+        CasoLinq clq = new CasoLinq();
+
+        Console.WriteLine("Primer libro");
+        Libro primero =clq.GetPrimero();
+        Console.WriteLine($"ID:{primero.Id} - Titulo:{primero.Titulo} - Precio:{primero.Precio:C0}");
+        Console.WriteLine("");
+
+        Console.WriteLine("Ultimo libro");
+        Libro ultimo=clq.GetUltimo();
+        Console.WriteLine($"ID:{ultimo.Id} - Titulo:{ultimo.Titulo} - Precio:{ultimo.Precio:C0}");
+        Console.WriteLine("");
+
+        Console.WriteLine("Suma de precios de los libros");
+        decimal total = clq.GetTotalPrecios();
+        Console.WriteLine($"Suma de precios:{total:C0}");
+        Console.WriteLine("");
+
+        Console.WriteLine("Promedio de precio de los libros");
+        decimal prom=clq.GetPromedioPrecios();
+        Console.WriteLine($"Promedio:{prom:C0}");
+        Console.WriteLine("");
+
+        Console.WriteLine("Libros con ID mayor a 15");
+        var listaid15 = clq.GetListById();
+        foreach(Libro l in listaid15)
+        {
+            Console.WriteLine($"ID:{l.Id} - Titulo:{l.Titulo} - Precio:{l.Precio}");
+
+        }
+        Console.WriteLine("");
+
+        Console.WriteLine("Lista de libros");
+        var listalibros = clq.GetLibros();
+        foreach (string l in listalibros)
+        {
+            Console.WriteLine(l);
+
+        }
+        Console.WriteLine("");
+
+        Console.WriteLine("Libro mas caro");
+        Libro mascaro = clq.GetMayorPrecio();
+        Console.WriteLine($"ID:{mascaro.Id} - Titulo:{mascaro.Titulo} - Precio:{mascaro.Precio}");
+        Console.WriteLine("");
+
+        Console.WriteLine("Libro mas barato");
+        Libro masbarato = clq.GetMayorPrecio();
+        Console.WriteLine($"ID:{masbarato.Id} - Titulo:{masbarato.Titulo} - Precio:{masbarato.Precio}");
+        Console.WriteLine("");
+
+        Console.WriteLine("Lista de libros ordenada por titulo Z-A");
+        var listaord = clq.GetLibrosOrdenados();
+        foreach(Libro l in listaord)
+        {
+            Console.WriteLine($"ID:{l.Id} - Titulo:{l.Titulo} - Precio:{l.Precio:C0}");
+        }
 
     }
 }
