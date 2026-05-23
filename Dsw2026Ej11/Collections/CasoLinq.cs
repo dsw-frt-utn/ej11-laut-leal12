@@ -75,20 +75,20 @@ public class CasoLinq
 
     public Libro GetMayorPrecio()
     {
-        var consultaOrdenada = from l in libros
+        var consultaOrdenadaMay = from l in libros
                                orderby l.Precio descending
                                select l;
 
-        return consultaOrdenada.ToList()[0];
+        return consultaOrdenadaMay.ToList()[0];
     }
 
     public Libro GetMenorPrecio()
     {
-        var consultaOrdenada = from l in libros
+        var consultaOrdenadaMen = from l in libros
                                orderby l.Precio ascending
                                select l;
 
-        return consultaOrdenada.ToList()[0];
+        return consultaOrdenadaMen.ToList()[0];
     }
 
     public List<Libro> GetMayorPromedio()

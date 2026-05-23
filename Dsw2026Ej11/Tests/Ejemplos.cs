@@ -142,7 +142,7 @@ internal class Ejemplos
         Console.WriteLine("");
 
         Console.WriteLine("Libro mas barato");
-        Libro masbarato = clq.GetMayorPrecio();
+        Libro masbarato = clq.GetMenorPrecio();
         Console.WriteLine($"ID:{masbarato.Id} - Titulo:{masbarato.Titulo} - Precio:{masbarato.Precio}");
         Console.WriteLine("");
 
